@@ -10,75 +10,63 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
-
 </head>
 
 <body>
-
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-
+  <main class="main-content">
     <div class="container">
-      <div class="wrapper">
-        <form class="contact-form">
-          <h2>Contact Us</h2>
-          <!-- names -->
-          <div class="row two">
-            <div class="field">
-              <label>First Name *</label>
-              <input type="text" required>
-            </div>
-            <div class="field">
-              <label>Last Name *</label>
-              <input type="text" required>
-            </div>
-          </div>
-          <!-- email -->
+      <form class="contact-form">
+        <h2 class="contact-form__title">Contact Us</h2>
+        <!-- names -->
+        <div class="row two">
           <div class="field">
-            <label>Email Address *</label>
-            <input type="email" required>
+            <label>First Name *</label>
+            <input type="text" required>
           </div>
-          <!-- query type -->
           <div class="field">
-            <label>Query Type *</label>
-            <div class="radio-group">
-              <label class="radio-box">
-                <input type="radio" name="query">
-                <span>General Enquiry</span>
-              </label>
-              <label class="radio-box">
-                <input type="radio" name="query">
-                <span>Support Request</span>
-              </label>
-            </div>
+            <label>Last Name *</label>
+            <input type="text" required>
           </div>
-          <!-- message -->
-          <div class="field">
-            <label>Message *</label>
-            <textarea rows="5"></textarea>
+        </div>
+        <!-- email -->
+        <div class="field">
+          <label>Email Address *</label>
+          <input type="email" required>
+        </div>
+        <!-- query type -->
+        <div class="field">
+          <label>Query Type *</label>
+          <div class="radio-group">
+            <label class="radio-box">
+              <input type="radio" name="query">
+              <span class="radio-custom"></span>
+              General Enquiry
+            </label>
+            <label class="radio-box">
+              <input type="radio" name="query">
+              <span class="radio-custom"></span>
+              Support Request
+            </label>
           </div>
-          <!-- consent -->
-          <label class="checkbox">
-            <input type="checkbox">
-            I consent to being contacted by the team
-          </label>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        </div>
+
+        <!-- message area -->
+        <div class="field field-textarea">
+          <label for="textarea">Message *</label>
+          <textarea id="textarea" rows="10"></textarea>
+        </div>
+
+        <!-- consent -->
+        <label class="checkbox">
+          <input type="checkbox">
+          <span class="custom-checkbox"></span>
+          I consent to being contacted by the team *
+        </label>
+        <button type="submit">Submit</button>
+      </form>
     </div>
+  </main>
 
-  </body>
-
-  </html>
   <script src="js/main.js"></script>
 </body>
 
