@@ -27,62 +27,53 @@
 
   <body>
 
-    <div class="wrapper">
-      <form class="contact-form">
-
-        <h2>Contact Us</h2>
-
-        <!-- names -->
-        <div class="row two">
+    <div class="container">
+      <div class="wrapper">
+        <form class="contact-form">
+          <h2>Contact Us</h2>
+          <!-- names -->
+          <div class="row two">
+            <div class="field">
+              <label>First Name *</label>
+              <input type="text" required>
+            </div>
+            <div class="field">
+              <label>Last Name *</label>
+              <input type="text" required>
+            </div>
+          </div>
+          <!-- email -->
           <div class="field">
-            <label>First Name *</label>
-            <input type="text" required>
+            <label>Email Address *</label>
+            <input type="email" required>
           </div>
-
+          <!-- query type -->
           <div class="field">
-            <label>Last Name *</label>
-            <input type="text" required>
+            <label>Query Type *</label>
+            <div class="radio-group">
+              <label class="radio-box">
+                <input type="radio" name="query">
+                <span>General Enquiry</span>
+              </label>
+              <label class="radio-box">
+                <input type="radio" name="query">
+                <span>Support Request</span>
+              </label>
+            </div>
           </div>
-        </div>
-
-        <!-- email -->
-        <div class="field">
-          <label>Email Address *</label>
-          <input type="email" required>
-        </div>
-
-        <!-- query type -->
-        <div class="field">
-          <label>Query Type *</label>
-
-          <div class="radio-group">
-            <label class="radio-box">
-              <input type="radio" name="query">
-              <span>General Enquiry</span>
-            </label>
-
-            <label class="radio-box">
-              <input type="radio" name="query">
-              <span>Support Request</span>
-            </label>
+          <!-- message -->
+          <div class="field">
+            <label>Message *</label>
+            <textarea rows="5"></textarea>
           </div>
-        </div>
-
-        <!-- message -->
-        <div class="field">
-          <label>Message *</label>
-          <textarea rows="5"></textarea>
-        </div>
-
-        <!-- consent -->
-        <label class="checkbox">
-          <input type="checkbox">
-          I consent to being contacted by the team
-        </label>
-
-        <button type="submit">Submit</button>
-
-      </form>
+          <!-- consent -->
+          <label class="checkbox">
+            <input type="checkbox">
+            I consent to being contacted by the team
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
 
   </body>

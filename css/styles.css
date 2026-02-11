@@ -97,12 +97,6 @@ select:-webkit-autofill:focus {
 	only screen and (min-resolution: 2dppx) {
 }
 
-body {
-	background: #c9d8d2;
-	margin: 0;
-	padding: 20px;
-}
-
 .wrapper {
 	max-width: 650px;
 	margin: auto;
@@ -187,6 +181,7 @@ button:hover {
 /* =========================
    Desktop (Flexbox only)
    ========================= */
+
 @media (min-width: 768px) {
 	/* first + last name side by side */
 	.two {
