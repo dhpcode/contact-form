@@ -7,8 +7,8 @@
 	--text-color: #2a4144;
 	--green-color: #0c7d69;
 	--bg-color: #e0f1e8;
+	--input-border-color: #86a2a5;
 }
-
 html {
 	box-sizing: border-box;
 	height: 100%;
@@ -79,7 +79,7 @@ select:-webkit-autofill:focus {
 
 .container {
 	width: 100%;
-	max-width: 1000px;
+	max-width: 1200px;
 	padding: 32px 16px;
 	margin-left: auto;
 	margin-right: auto;
@@ -99,115 +99,112 @@ select:-webkit-autofill:focus {
 	only screen and (min-resolution: 2dppx) {
 }
 
-/* .wrapper {
-	max-width: 650px;
-	margin: auto;
-} */
-
-.contact-form {
-	background: #fff;
-	padding: 24px;
-	border-radius: 16px;
-}
-
-.contact-form__title {
-	margin-top: 0;
-	margin-bottom: 2rem;
-	font-size: 2rem;
-	letter-spacing: -1px;
-}
-
-/* fields */
-.field {
+.form {
+	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 1.5rem;
+	gap: 40px;
+	background-color: #fff;
+	border-radius: 16px;
+}
+/* .form__top {
+} */
+.form-heading {
+	letter-spacing: -1px;
+	text-transform: capitalize;
+	margin-top: 0;
+	margin-bottom: 32px;
 }
 
-label {
+.form__inputs {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.row {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.label {
 	margin-bottom: 0.5rem;
 }
 
-input,
-textarea {
+/* .form__inputs-fname input {
+	width: 100%;
+} */
+
+.label + input {
 	width: 100%;
 	padding: 12px 24px;
 	border-radius: 8px;
-	border: 1px solid #86a2a5;
-	font-size: 1.125rem;
+	border: 1px solid var(--input-border-color);
 	color: var(--text-color);
-	outline-width: 1px;
+	font-size: 1.125rem;
 	outline: none;
-}
-
-input:hover,
-textarea:hover {
-	border-color: var(--green-color);
 	cursor: pointer;
 }
 
-.field:has(.input:focus, textarea:focus) {
+.label + input:hover {
+	border-color: var(--green-color);
+}
+.label + input:focus {
 	border-color: var(--green-color);
 }
 
-textarea {
-	resize: vertical;
-}
+/* .form__inputs-lname {
+} */
 
-.field-textarea {
-	margin-bottom: 40px;
+/* .form-inputs__email {
+} */
+
+.form-inputs__queries {
 }
-/* radio group */
-.radio-group {
-	display: flex;
-	flex-direction: column;
+.queries {
+}
+.queries__row {
 	gap: 16px;
 }
-
-.radio-group label {
-	margin: 0;
-}
-
-.radio-box {
+.queries__row label {
 	display: flex;
 	align-items: center;
 	gap: 12px;
-	border: 1px solid #86a2a5;
+	cursor: pointer;
+}
+.queries__type input {
+	display: none;
+}
+
+.queries__type {
 	padding: 12px 24px;
+	border: 1px solid var(--input-border-color);
 	border-radius: 8px;
 	cursor: pointer;
 }
-
-.radio-box input {
-	width: auto;
+.queries__type:hover {
+	border-color: var(--green-color);
 }
 
-.radio-box span {
-	font-size: 1.125rem;
-	/* flex-grow: 1; */
-}
-
-.radio-box:has(input:checked) {
+.queries__type:has(input:checked) {
 	background-color: var(--bg-color);
 	border-color: var(--green-color);
 }
 
 /* Custom radio */
 
-.radio-box input {
-	display: none;
-}
-
-.radio-custom {
+.custom-radio {
+	display: inline-block;
 	width: 20px;
 	height: 20px;
-	border: 2px solid #86a2a5;
+	border: 2px solid var(--input-border-color);
 	border-radius: 50%;
 	position: relative;
 	flex-shrink: 0;
 }
 
-.radio-custom::after {
+.custom-radio::after {
+	display: inline-block;
 	content: "";
 	position: absolute;
 	inset: 4px;
@@ -216,101 +213,125 @@ textarea {
 	transition: 0.2s;
 }
 
-.radio-box input:checked + .radio-custom {
+.queries__type input:checked + .custom-radio {
 	border-color: var(--green-color);
 }
 
-.radio-box input:checked + .radio-custom::after {
+.queries__type input:checked + .custom-radio::after {
 	background: var(--green-color);
 }
 
-/* checkbox */
-.checkbox {
+/* Textarea */
+
+.form-inputs__textarea {
 	display: flex;
-  align-items: center;
-	gap: 8px;
-	font-size: 14px;
-	margin-bottom: 18px;
+	flex-direction: column;
 }
 
-.checkbox input {
-	width: auto;
+.form-inputs__textarea textarea {
+	outline: none;
+	border-radius: 8px;
+	border: 1px solid var(--input-border-color);
+	padding: 12px 24px;
+	color: var(--text-color);
+	font-size: 1.125rem;
+	line-height: 150%;
+	resize: vertical;
 }
+
+textarea:hover,
+textarea:focus {
+	border-color: var(--green-color);
+}
+
+/* Checkbox */
+
+.form__checkbox label {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	gap: 19px;
+}
+
+.custom-checkbox {
+	flex-shrink: 0;
+}
+
+/* Custom checkbox */
 
 /*===== Custom checkbox =====*/
 
 /* hide default checkbox */
-.checkbox input {
+.form__checkbox input {
 	display: none;
 }
 
 /* square box */
 .custom-checkbox {
-	width: 22px;
-	height: 22px;
+	width: 18px;
+	height: 18px;
 	border: 2px solid #86a2a5;
-	border-radius: 6px;
+	border-radius: 2px;
+	transition: 0.2s;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: 0.2s;
-  flex-shrink: 0;
 }
 
 /* check icon */
 .custom-checkbox::after {
 	content: "✓";
 	color: white;
-	font-size: 14px;
+	font-size: 10px;
 	font-weight: bold;
 	display: none;
 }
 
 /* when checked */
-.checkbox input:checked + .custom-checkbox {
+.form__checkbox input:checked + .custom-checkbox {
 	background: #1b7f68;
 	border-color: #1b7f68;
 }
 
-.checkbox input:checked + .custom-checkbox::after {
+.form__checkbox input:checked + .custom-checkbox::after {
 	display: block;
 }
 
-/* button */
-button {
-	width: 100%;
-	background: #1b7f68;
-	color: white;
-	padding: 14px;
+/* Button */
+
+.btn {
+	font-style: 1.125rem;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 16px;
 	border: none;
 	border-radius: 8px;
-	font-weight: 600;
+	background-color: var(--green-color);
 	cursor: pointer;
 }
 
-button:hover {
-	opacity: 0.9;
+.btn:hover {
+	background-color: #0b0b43;
+}
+.btn:active {
+	background-color: var(--green-color);
 }
 
-/* =========================
-   Desktop (Flexbox only)
-   ========================= */
+/* Media queries */
 
-@media (min-width: 768px) {
-	/* first + last name side by side */
-	.two {
-		display: flex;
+@media screen and (min-width: 768px) {
+	.form {
+		padding: 40px;
+	}
+
+	.row {
+		flex-direction: row;
 		gap: 16px;
 	}
 
-	.two .field {
-		flex: 1;
-	}
-  .radio-group label {
-    flex-grow: 1;
-  }
-	/* radio side by side */
-	.radio-group {
-		flex-direction: row;
+	.row div {
+		width: 50%;
 	}
 }
